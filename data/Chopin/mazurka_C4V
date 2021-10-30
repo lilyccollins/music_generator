@@ -1,0 +1,18 @@
+X:76
+T:Mazurka
+C:F.Chopin. Op.33 No.1
+S:Mutopia
+M:3/4
+L:1/4
+Q:&quot;Mesto&quot;
+K:B %%staves {(RH1 RH2) (LH1 LH2)}
+V:1 clef=treble name=&quot;Piano&quot;
+K:B 
+V:1 clef=treble name=&quot;Piano&quot;
+% 
+V:1
+(!p!LD | E/>D/ [^^CGB][^C^^FA] | G2-) (G/A/ | B/c/ d {/f}e | (d/g//)) z// (Ld2 | 
+V:1
+d/>c/ e d) | {/c}(B/>A/ [EGc][DGB]) | (E/>D/ [^^CGB][^C^^FA] | G2 B | d/>c/e d) | 
+V:1
+[G,D] ([C,C] [G,,G,]) | z ([C,C,,] [G,,,G,,]) | z z (D,, | G,,2) x | z ([C,C] [G,,G,])

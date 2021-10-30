@@ -1,0 +1,87 @@
+
+Songwriting
+Authors: Lily Collins, Frances Jing, Jenny Ngo
+Revision: 5/24/20
+
+Introduction: 
+
+Our program reads in excerpts of sheet music, chosen by the user from a list of composers and songs. In abc format, it composes a new piece based on the patterns and trends demonstrated in the music pieces. The program will likely not be able to play the music it composes, but our team will play a few examples of the music on a piano. This application combines our interests in computer science and our passions for music to create an original piece for any musician to play, based on music that they like from the song list provided in the program. The rules are that the input pieces must be from the same artist. For example, a combination of Beethoven’s Sonatas and Chopin’s Waltzes would not be ideal. Our goal is to create a song with notes that combine well together for anyone who shares the same love for music as we do. The primary features of our program include a system prompting the user for song choices in the selection given, which is then used for calculating the probability of which notes follow the other, and then generating an original composed music piece. 
+
+Instructions:
+
+There will be an introduction page with a dropdown menu of composer choices. When a composer is selected and the “OK” button is pressed, the user is directed to a screen with pieces made by that composer. The user can click as many buttons as possible to listen to a 30 second clip of the song and then select the pieces that they would like to “inspire” the program to compose a new song. The user can click on the button again in order to “deselect” a piece and it will be removed from the list of chosen songs. When they are done picking the pieces, they will click another button in the corner titled “compose”. The user is then led to another screen with the new piece outputted in abc notation.
+
+
+
+Features List (THE ONLY SECTION THAT CANNOT CHANGE LATER):
+Must-have Features:
+ Reads a series of text files containing sheet music in ABC notation
+ System that tracks each note in the file (assuming only one note is played at a time)
+ System that tallies which notes/cords follow each note (assuming only one note is played at a time)
+ System that uses the probabilities created in the previous step to choose the next note (assuming only one note is played at a time)
+ Puts the series of notes composed in the previous step back into ABC notation
+
+
+Want-to-have Features:
+ A system to translate a sheet music as PDF to ABC notation in a txt file and back
+ Be able to account for more than one note being played at once (chords)
+ Add another key representing the end of the song and let the program decide how many notes to play
+Add an interface so the user can drag and drop the files they want to use
+ Be able to account for articulation, etc.
+Have an error system that tells the user that they broke the rules of the program (different artists or types of piece)
+Play an excerpt of the music provided
+A sort feature of the music given to separate genre, artist, and type of piece
+
+Stretch Features:
+ An interface to play the music with sound samples of each note.
+ A way for the program to search the internet and find and download pieces of sheet music of a given artist
+ An interface to listen to music being played and compose new music from that
+
+
+Class List:
+Note - represents a note, contains a string specifying which note it is and a hashtable (string : int) keeping a tally of how many times each note follows this one; has a method to add to the tally of a note in the hashtable given the string name of the note and a method to choose the most likely note to follow it
+Sheet - contains string filename and an ArrayList<String> with all the notes in it; has a method to read a file in ABC notation and fill the ArrayList and a method to write a file with the filename and ArrayList in ABC notation
+Composer - has an ArrayList of all 88 keys (represented by Note objects) and an ArrayList of all the sheet music being analyzed (represented by Sheet objects). Has a method to add to the tallies in each Note as it reads the ArrayList<String> of notes within each Sheet. Has a method to generate int n number of notes of new music into a new Sheet object once the Sheets are read and the Note tallies are filled.
+Main - creates a Composer object and runs method to fill tallies and generate music into a given output filename
+DrawingSurface - creates a pop up with a drop down menu that allows the user to choose between one of 3 artists. Has a method to return an ArrayList of filenames based on the artist chosen.
+Screen - a parent class that represents the idea of a screen
+BachScreen - represents the screen the user sees once they click Bach as their artist
+BeethovenScreen - represents the screen the user sees once they click Beethoven as their artist
+ChopinScreen - represents the screen the user sees once they click Chopin as their artist
+LaLaLandScreen - represents the screen the user sees once they click La La Land Soundtrack as their composer
+ScreenSwitcher - an interface that switches between screens
+
+Credits:
+
+Lily: 
+Internal credit - coded the classes Composer and Sheet, supplied the idea of the Songwriter project.
+
+External credit - added some of the songs from the site ABC Notation.
+
+Jenny: 
+Internal credit - coded the classes BachScreen, BeethovenScreen, ChopinScreen, LaLaLandScreen, Screen, ScreenSwitcher, Main, DrawingSurface. Transposed some pieces into abc notation
+
+External credit - used processing screens, sound library from Shelby’s demos, had personal help from him, and added music from site ABC Notation.
+
+Frances: 
+Internal credit - coded the class Note, OutputScreen, added all javadoc headers, initialized project setup.
+
+External credit - used Stack Overflow.
+
+Artists:
+
+Beethoven
+	Fur Elise
+	Favorite Waltz
+	Moonlight Sonata
+Chopin
+	Mazurka
+	Prelude
+	Waltz
+Bach
+	Menuet Trio
+	Prelude
+	Cello Suite
+La La Land Soundtrack
+	City of Stars
+	Mia and Sebastian’s Theme
